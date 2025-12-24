@@ -10,3 +10,4 @@ def find_index(nums, target):
 
 result = find_index(nums, target)
 print(result)
+ 
