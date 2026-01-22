@@ -2,12 +2,9 @@ nums = [5, 3, 9, 8, 1, 6, 4, 10, -100]
 target = 4
 
 def find_index(nums, target):
-    n = len(nums)
-    for i in range(n):
-        if nums[i] == target:
-            return i
-    return -1   # if target not found
+    try:
+        return nums.index(target)
+    except ValueError:
+        return -1
 
-result = find_index(nums, target)
-print(result)
- 
+print(find_index(nums, target))
