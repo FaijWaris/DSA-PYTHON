@@ -1,18 +1,11 @@
 def maxProfit(prices):
-    min_price = float('inf')   # best buying price
-    max_profit = 0             # maximum profit
+    min_price = prices[0]
+    max_profit = 0
 
-    for price in prices:
-        if price < min_price:
-            min_price = price          # buy at lower price
-        else:
-            profit = price - min_price # sell today
-            max_profit = max(max_profit, profit)
+    for price in prices[1:]:
+        min_price = min(min_price, price)
+        max_profit = max(max_profit, price - min_price)
 
     return max_profit
 
-
-# Example
-prices = [7, 1, 5, 3, 6, 4]
-print(maxProfit(prices))  # Output: 5
 
